@@ -1,8 +1,12 @@
 require 'spec_helper'
 
 describe Noticer do
-  it 'has a version number' do
+  it "has a version number" do
     expect(Noticer::VERSION).not_to be nil
+  end
+
+  it "has the current version number" do
+    expect(Noticer::VERSION).to eq "0.2.0"
   end
 
   describe "#emit" do
