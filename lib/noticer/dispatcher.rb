@@ -5,7 +5,7 @@ module Noticer
     end
 
     def emit(routing_key, message)
-      self.filtered_callbacks(routing_key).each do |ac|
+      filtered_callbacks(routing_key).each do |ac|
         ac[:callback].call(routing_key, message)
       end
     end

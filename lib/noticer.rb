@@ -13,5 +13,10 @@ module Noticer
     def configure
       yield(configuration)
     end
+
+    def emit(routing_key, message)
+      @dispatcher ||= Dispatcher.new(configuration)
+      @dispatcher.emit(routing_key, message)
+    end
   end
 end
